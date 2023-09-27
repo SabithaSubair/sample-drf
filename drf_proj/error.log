@@ -1,0 +1,10 @@
+name 'requests' is not defined
+Group matching query does not exist.
+Group matching query does not exist.
+Group matching query does not exist.
+'CustomUserManager' object has no attribute 'createuser'
+'CustomUserManager' object has no attribute 'createuser'
+'CustomUserManager' object has no attribute 'createuser'
+name 'userdetails' is not defined
+{'username': [ErrorDetail(string='custom user with this username already exists.', code='unique')], 'password': [ErrorDetail(string='Ensure this field has at least 6 characters.', code='min_length')]}
+{'password': [ErrorDetail(string='Ensure this field has at least 6 characters.', code='min_length')]}
