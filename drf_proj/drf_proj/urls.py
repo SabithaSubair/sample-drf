@@ -33,5 +33,6 @@ urlpatterns = [
     path('api/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
     path('api/auth/', include('drf_app.urls')),
     path('api/core/', include('core_app.urls')),
+    path('api/test/', include('test_app.urls')),
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
