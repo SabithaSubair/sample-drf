@@ -29,3 +29,28 @@ thread2.join()
 print("Both threads have finished.")
 
 
+
+from django.http import HttpResponse
+from django.views import View
+
+def download_file(file_name):
+    time.sleep(2)  # Simulate file download
+    return f"Downloaded: {file_name}"
+
+class DownloadView(View):
+    def get(self, request):
+        files = ["file1.txt", "file2.txt", "file3.txt"]
+        responses = []
+
+        # Create threads to download files concurrently
+        threads = [threading.Thread(target=lambda f=file: responses.append(download_file(f))) for file in files]
+
+        # Start the threads
+        for thread in threads:
+            thread.start()
+
+        # Wait for all threads to finish
+        for thread in threads:
+            thread.join()
+
+        return HttpResponse("<br>".join(responses))
